@@ -1,9 +1,10 @@
 import java.util.ArrayList;
+import java.util.Random;
 
-public class CardDeck {
-    private ArrayList<Card> cards = new ArrayList<>();
+public class Koloda {
+    protected ArrayList<Card> cards = new ArrayList<>();
 
-    public CardDeck() {
+    public Koloda() {
         cards.add(new Card("Двойка трефа", 2));
         cards.add(new Card("Двойка бубна", 2));
         cards.add(new Card("Двойка пика", 2));
@@ -69,5 +70,12 @@ public class CardDeck {
         cards.add(new Card("Туз пика", 11));
         cards.add(new Card("Туз черви", 11));
     }
+
     //метод возврата рондомной карты
+    public static Card getRandCard(ArrayList<Card> cards) {
+        Random random = new Random();
+        Card cardRand = cards.get(random.nextInt(cards.size()));
+        System.out.println(cardRand.toString());
+        return cardRand;
+    }
 }
